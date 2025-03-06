@@ -4,6 +4,7 @@ description = "High level bindings to create a Waybar CFFI module"
 version = { workspace = true }
 edition = { workspace = true }
 license = { workspace = true }
+readme = "../README.md"
 repository = { workspace = true }
 rust-version = { workspace = true }
 
