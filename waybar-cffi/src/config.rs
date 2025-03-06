@@ -34,24 +34,13 @@ fn entry(
                 });
             }
         };
-
-        // Annoyingly, waybar provides the value as a bare string if it's JSON,
-        // but _also_ provides a bare string if it was a literal string. All we
-        // can do for now is to try to parse it as JSON, then fall back on
-        // treating it as a string if that fails.
-        //
-        // On the bright side, deserialisation into the configuration type
-        // should then fail.
-        let value = CStr::from_ptr((*entry).value);
-        let value = match serde_jsonc::from_slice(value.to_bytes()) {
-            Ok(value) => value,
-            Err(_) => match value.to_str() {
-                Ok(value) => serde_jsonc::Value::String(value.to_string()),
-                Err(e) => {
-                    return Err(Error::ValueInvalid { e, key });
+        let value =
+            serde_jsonc::from_slice(CStr::from_ptr((*entry).value).to_bytes()).map_err(|e| {
+                Error::ValueInvalid {
+                    e,
+                    key: key.clone(),
                 }
-            },
-        };
+            })?;
 
         Ok((key, value))
     }
