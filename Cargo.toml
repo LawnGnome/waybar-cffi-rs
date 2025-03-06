@@ -1,0 +1,10 @@
+[workspace]
+members = ["waybar-cffi", "waybar-cffi-sys"]
+resolver = "2"
+
+[workspace.package]
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/LawnGnome/waybar-cffi-rs"
+rust-version = "1.85.0"
+version = "0.1.0"

@@ -1,0 +1,22 @@
+[package]
+name = "waybar-cffi"
+description = "High level bindings to create a Waybar CFFI module"
+version = { workspace = true }
+edition = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+rust-version = { workspace = true }
+
+[dependencies]
+itertools = "0.14.0"
+serde = "1.0.218"
+serde_jsonc = "1.0.108"
+thiserror = "2.0.12"
+waybar-cffi-sys = { version = "0.1.0", path = "../waybar-cffi-sys" }
+
+[dev-dependencies]
+serde = { "version" = "1.0.218", features = ["derive"] }
+
+[[example]]
+name = "hello-world"
+crate-type = ["cdylib"]

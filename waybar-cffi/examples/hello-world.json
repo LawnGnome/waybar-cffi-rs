@@ -1,0 +1,13 @@
+{
+    "position": "bottom",
+    "modules-left": ["cffi/hello-world"],
+    "modules-center": [],
+    "modules-right": ["cffi/hello-name"],
+    "cffi/hello-name": {
+        "module_path": "target/debug/examples/libhello_world.so",
+        "name": "Adam"
+    },
+    "cffi/hello-world": {
+        "module_path": "target/debug/examples/libhello_world.so"
+    }
+}

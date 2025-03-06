@@ -1,0 +1,12 @@
+[package]
+name = "waybar-cffi-sys"
+description = "Low level bindings used when creating a Waybar CFFI module"
+version = { workspace = true }
+edition = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+rust-version = { workspace = true }
+
+[dependencies]
+gtk = "0.18.2"
+libc = "0.2.151"
