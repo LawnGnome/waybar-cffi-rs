@@ -97,7 +97,7 @@ macro_rules! waybar_module {
     ($ty:ty) => {
         #[allow(non_upper_case_globals)]
         #[unsafe(no_mangle)]
-        pub static wbcffi_version: $crate::sys::libc::size_t = 1;
+        pub static wbcffi_version: $crate::sys::libc::size_t = 2;
 
         #[allow(clippy::not_unsafe_ptr_arg_deref)]
         #[unsafe(no_mangle)]

@@ -21,10 +21,10 @@ pub enum Error {
         key: CString,
     },
 
-    #[error("value in key {key} is invalid UTF-8: {e}")]
+    #[error("value in key {key} is invalid JSON: {e}")]
     ValueInvalid {
         #[source]
-        e: Utf8Error,
+        e: serde_jsonc::Error,
         key: String,
     },
 }
